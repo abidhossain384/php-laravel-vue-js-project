@@ -12,5 +12,5 @@ abstract class VehicleBase {
         $this->name = $price;
         $this->name = $image;
     }
-    abstract public function getDetails();
+    abstract public function getDetails($id);
 }
