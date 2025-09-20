@@ -5,16 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Title -->
-    <title>Delicious Restaurant</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Email Template</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- AOS CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -25,168 +20,153 @@
         }
 
         body{
-            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            font-family: "Poppins", sans-serif;
         }
-
-        .hero {
-            background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8cmVzdGF1cmFudHxlbnwwfHx8fDE2OTU2MjI5NzY&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center
-            ;
-            background-size: cover;
-            background-attachment: fixed;
+        .email-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .email-header {
+            background-color: #0d6efe;
             color: #fff;
-            display:  flex;
-            height: 100vh;
-            align-items: center;
-            justify-content: center;
             text-align: center;
+            padding: 20px;
         }
-        .menu-item .card {
-            transition: all 0.3s ease-in-out;
+        .email-header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .email-body {
+            padding: 25px;
+            color: #333333;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+        .email-body h2 {
+            color: #0d6efe;
+            font-size: 20px;
+            margin-top: 0;
+        }
+        .email-body a.button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 20px 0;
+            background-color: #0d6efe;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .email-footer {
+            background-color: #f8f9fa;
+            color: #555;
+            text-align: center;
+            font-size: 14px;
+            padding: 20px;
         }
 
-        .menu-item .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        /* Extra small devices (phones, 600px and down) */
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+            }
+            .email-body {
+                padding: 15px !important;
+            }
+            .email-header h1 {
+                font-size: 20px !important;
+            }
         }
 
-        .menu-item img{
-            height: 200px;
-            object-fit: cover;
+        /* Small devices (portrait tablets and large phones, 600px and up) */
+        @media only screen and (min-width: 600px) {
+            .email-container {
+                width: 100% !important;
+            }
+            .email-body {
+                padding: 15px !important;
+            }
+            .email-header h1 {
+                font-size: 20px !important;
+            }
+        }
+
+        /* Medium devices (landscape tablets, 768px and up) */
+        @media only screen and (min-width: 768px) {
+            .email-container {
+                width: 100% !important;
+            }
+            .email-body {
+                padding: 15px !important;
+            }
+            .email-header h1 {
+                font-size: 20px !important;
+            }
+        }
+
+        /* Large devices (laptops/desktops, 992px and up) */
+        @media only screen and (min-width: 992px) {
+            .email-container {
+                width: 880px !important;
+            }
+            .email-body {
+                padding: 30px !important;
+                font-size: 18px !important;
+                line-height: 1.8 !important;
+            }
+            .email-header h1 {
+                font-size: 24px !important;
+            }
+        }
+
+        /* Extra large devices (large laptops and desktops, 1200px and up) */
+        @media only screen and (min-width: 1200px) {
+            .email-container {
+                width: 880px !important;
+            }
+            .email-body {
+                padding: 30px !important;
+                font-size: 18px !important;
+                line-height: 1.8 !important;
+            }
+            .email-header h1 {
+                font-size: 24px !important;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Navbar Section -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Delicious</a>
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <!-- Container -->
+    <div class="email-container">
+        <!-- Header -->
+         <div class="email-header">
+            <h1>Company Name</h1>
+         </div>
+        <!-- Body -->
+         <div class="email-body">
+            <h2>Hello Jone Doe,</h2>
+            <p>We are excited to anounce our latest updates. Check out the new features we added just for you.</p>
+            <p>Click the button below to learn more and get started.</p>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#menu">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+            <a href="" class="button">Explore Now</a>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div>
-            <h1 data-aos="fade-down">Welcome To Delicious</h1>
-            <p data-aos="zoom-in">Experience the taste of perfection</p>
-            <a data-aos="fade-up" href="#menu" class="btn btn-warning btn btn-lg mt-3">View Menu <i class="fa-solid fa-utensils"></i></a>
-        </div>
-    </section>
+            <p>Thank you for being a valued customer.</p>
 
-    <!-- About Section -->
-    <section id="about" class="py-5" data-aos="fade-up">
-           <div class="container text-center">
-                <h2>About Us</h2>
-                <p class="lead">Delicious Restaurant offers a blend of traditional and modern flavors. We use the freshest ingredients and craft each dish with love.</p>
-           </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section id="menu" class="py-5 bg-light" data-aos="fade-up">
-        <div class="container">
-            <h2 class="text-center mb-4">Our Menu</h2>
-            <div class="row g-4">
-
-                <div class="col-md-4 menu-item">
-                    <div class="card">
-                        <img class="card-img-top" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="Grilled Steak">
-                        <div class="card-body">
-                            <h5 class="card-title">Grilled Steak <i class="fa-solid fa-drumstick-bite"></i></h5>
-                            <p class="card-text">$25</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 menu-item">
-                    <div class="card">
-                        <img class="card-img-top" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="Pasta Delight">
-                        <div class="card-body">
-                            <h5 class="card-title">Pasta Delight <i class="fa-solid fa-pizza-slice"></i></h5>
-                            <p class="card-text">$18</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 menu-item">
-                    <div class="card">
-                        <img class="card-img-top" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800" alt="Fresh Salad">
-                        <div class="card-body">
-                            <h5 class="card-title">Fresh Salad <i class="fa-solid fa-seedling"></i></h5>
-                            <p class="card-text">$12</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Contact Section  -->
-    <section id="contact" class="py-5" data-aos="fade-up">
-        <div class="container">
-            <h2 class="text-center mb-4">Reserve a Table</h2>
-            <form class="row g-4 justify-content-center" action="">
-                <div class="col-md-4">
-                    <input type="text" class="form-control" placeholder="Name" name="" id="" required>
-                </div>
-
-                <div class="col-md-4">
-                    <input type="email" class="form-control" placeholder="Email" name="" id="" required>
-                </div>
-
-                <div class="col-md-4">
-                    <input type="tel" class="form-control" placeholder="Phone" name="" id="" required>
-                </div>
-
-                <div class="col-md-4">
-                    <input type="date" class="form-control"  name="" id="" required>
-                </div>
-
-                <div class="col-md-4">
-                    <input type="time" class="form-control"  required>
-                </div>
-                
-                <div class="col-12 text-center">
-                    <button type="button" class="btn btn-warning btn-lg mt-3">Book Now <i class="fa-solid fa-receipt"></i></button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="bg-dark text-white py-4 text-center">
-        &copy; 2025 Delicious Restaurant. All rights reserved.
-    </footer>
-    
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- AOS JS -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
-    <script>
-        AOS.init({
-            duration: 2000,
-            once: true
-        });
-    </script>
+            <p>Best Regards <br>Team Company</p>
+         </div>
+        <!-- Footer -->
+         <div class="email-footer">
+            <p>Company Name, 123, Street, City, Country</p>
+            <p><a href="" style="color: #0d6efe;">Unsubscribe</a> | <a href="" style="color: #0d5efe;">Contact Us</a></p>
+         </div>
+    </div>
 </body>
 </html>
