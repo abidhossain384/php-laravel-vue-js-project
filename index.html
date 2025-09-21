@@ -3,170 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Title -->
-    <title>Email Template</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body{
-            margin: 0;
-            padding: 0;
-            background-color: #f0f2f5;
-            font-family: "Poppins", sans-serif;
-        }
-        .email-container {
-            max-width: 600px;
-            margin: 40px auto;
-            background-color: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        .email-header {
-            background-color: #0d6efe;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-        .email-header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        .email-body {
-            padding: 25px;
-            color: #333333;
-            line-height: 1.5;
-            font-size: 16px;
-        }
-        .email-body h2 {
-            color: #0d6efe;
-            font-size: 20px;
-            margin-top: 0;
-        }
-        .email-body a.button {
-            display: inline-block;
-            padding: 12px 25px;
-            margin: 20px 0;
-            background-color: #0d6efe;
-            color: #fff;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .email-footer {
-            background-color: #f8f9fa;
-            color: #555;
-            text-align: center;
-            font-size: 14px;
-            padding: 20px;
-        }
-
-        /* Extra small devices (phones, 600px and down) */
-        @media only screen and (max-width: 600px) {
-            .email-container {
-                width: 100% !important;
-            }
-            .email-body {
-                padding: 15px !important;
-            }
-            .email-header h1 {
-                font-size: 20px !important;
-            }
-        }
-
-        /* Small devices (portrait tablets and large phones, 600px and up) */
-        @media only screen and (min-width: 600px) {
-            .email-container {
-                width: 100% !important;
-            }
-            .email-body {
-                padding: 15px !important;
-            }
-            .email-header h1 {
-                font-size: 20px !important;
-            }
-        }
-
-        /* Medium devices (landscape tablets, 768px and up) */
-        @media only screen and (min-width: 768px) {
-            .email-container {
-                width: 100% !important;
-            }
-            .email-body {
-                padding: 15px !important;
-            }
-            .email-header h1 {
-                font-size: 20px !important;
-            }
-        }
-
-        /* Large devices (laptops/desktops, 992px and up) */
-        @media only screen and (min-width: 992px) {
-            .email-container {
-                width: 880px !important;
-            }
-            .email-body {
-                padding: 30px !important;
-                font-size: 18px !important;
-                line-height: 1.8 !important;
-            }
-            .email-header h1 {
-                font-size: 24px !important;
-            }
-        }
-
-        /* Extra large devices (large laptops and desktops, 1200px and up) */
-        @media only screen and (min-width: 1200px) {
-            .email-container {
-                width: 880px !important;
-            }
-            .email-body {
-                padding: 30px !important;
-                font-size: 18px !important;
-                line-height: 1.8 !important;
-            }
-            .email-header h1 {
-                font-size: 24px !important;
-            }
-        }
-    </style>
+    <title>Module 11 Project</title>
 </head>
-
 <body>
-    <!-- Container -->
-    <div class="email-container">
-        <!-- Header -->
-         <div class="email-header">
-            <h1>Company Name</h1>
-         </div>
-        <!-- Body -->
-         <div class="email-body">
-            <h2>Hello Jone Doe,</h2>
-            <p>We are excited to anounce our latest updates. Check out the new features we added just for you.</p>
-            <p>Click the button below to learn more and get started.</p>
+    <h1>Open Console to See Output</h1>
 
-            <a href="" class="button">Explore Now</a>
 
-            <p>Thank you for being a valued customer.</p>
+    <script>
+        // debugger;
 
-            <p>Best Regards <br>Team Company</p>
-         </div>
-        <!-- Footer -->
-         <div class="email-footer">
-            <p>Company Name, 123, Street, City, Country</p>
-            <p><a href="" style="color: #0d6efe;">Unsubscribe</a> | <a href="" style="color: #0d5efe;">Contact Us</a></p>
-         </div>
-    </div>
+        let students = [];
+        let idCounter =1;
+
+        // Print Message
+        function showMessage() {
+            let printed = false;
+
+            do {
+                console.log("Welcome To Students Grade Management System");
+                printed = true;
+            } while(!printed)
+        }
+
+        // Add Student
+        function addStudent(name, marks) {
+            if(marks >= 80 && marks <= 100) {
+                grade = "A+"
+            } else if(marks >=70 && marks < 80) {
+                grade = "A"
+            } else if(marks >=60 && marks < 70) {
+                grade = "B"
+            } else if(marks >=50 && marks < 60) {
+                grade = "C"
+            } else if(marks >=40 && marks < 50) {
+                grade = "D"
+            } else {
+                grade = "F"
+            }
+
+            let student = {
+                id: idCounter++,
+                name: name,
+                marks: marks,
+                grade: grade
+            }
+
+            students.push(student);
+            return student;
+        }
+
+        // Show All Students
+        function showStudents() {
+            console.log("============= Students List =============");
+            for(let i=0; i<students.length; i++) {
+                console.log(`${students[i].id}, ${students[i].name}, ${students[i].marks}, ${students[i].grade}`);
+            }
+        }
+
+        // Find Student
+        function findStudent(id) {
+            let result;
+
+            switch(true) {
+                case students.length === 0 :
+                    result = "No Student Found";
+                    break;
+                default : 
+                    result = students.find(s=>s.id === id) || "Student Not Found";
+            }
+
+            return result;
+        }
+
+        // Total Marks
+        function totalMarks() {
+            let i = 0;
+            let total = 0;
+            while(i <students.length) {
+                total += students[i].marks;
+                i++;
+            }
+
+            return total;
+        }
+
+        // Student Details
+        function showStudentDetails(student) {
+            console.log("============= Student Details =============");
+
+            for(let key in student) {
+                console.log(`${key} : ${student[key]}`);
+            }
+        }
+
+        // Delete Student
+        let deleteStudent = function(id) {
+            let index = students.findIndex(s=>s.id === id);
+
+            if(index !== -1) {
+                students.splice(index, 1);
+                return "Student Deleted Successfully";
+            } else {
+                return "Student Not Found";
+            }
+        }
+
+        // Average Marks
+        let averageMarks = () =>{
+            if(students.length === 0) {
+                return 0;
+            } else {
+                return totalMarks() / students.length;
+            }
+        }
+
+        // Show all students except F grade
+        function showPassedStudents() {
+            console.log("============= Passed Students =============");
+            for (let i = 0; i < students.length; i++) {
+                if (students[i].grade !== "F") {
+                    console.log(`${students[i].id}, ${students[i].name}, ${students[i].marks}, ${students[i].grade}`);
+                }
+            }
+        }
+
+        // Find student with highest mark
+        function findTopStudent() {
+            if (students.length === 0) {
+                return "No students available";
+            }
+
+            let topStudent = students[0]; // assume first student is top initially
+
+            for (let i = 1; i < students.length; i++) {
+                if (students[i].marks > topStudent.marks) {
+                    topStudent = students[i];
+                }
+            }
+
+            return topStudent;
+        }
+
+        // Welcome Message
+        showMessage();
+
+        // Create Students
+        addStudent("Ariful", 23);
+        addStudent("Mokbul", 98);
+        addStudent("Kuddus", 32);
+        addStudent("Saiful", 40);
+        addStudent("Ismail", 54);
+
+        // Show All Students
+        showStudents();
+
+        // Total Marks Obtained by Students
+        console.log("Total Marks: ", totalMarks());
+
+        // Find Student with ID
+        console.log(findStudent(2));
+
+        // Show Student Details
+        showStudentDetails(students[1]);
+
+        // Delete  Student With ID
+        console.log(deleteStudent(1));
+
+        // Showing Students After Deleting One Student
+        showStudents();
+
+        // Total Marks Obtained by Students After Deleting One Student
+        console.log("Total Marks: ", totalMarks());
+
+        // Calculting Average Marks
+        console.log("Average Mark: ", averageMarks());
+
+        // Showing Only Passed Students
+        showPassedStudents();
+
+        // Show Student with Highest Mark
+        console.log("Top Student:", findTopStudent());
+
+    </script>
 </body>
 </html>
