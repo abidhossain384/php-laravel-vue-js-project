@@ -162,12 +162,37 @@
         // debugger;
 
         // Login Handle
+        // document.getElementById("loginForm").addEventListener("submit", function(e) {
+        //     e.preventDefault();
+        //     const username = document.getElementById("username").value;
+        //     const email = document.getElementById("email").value;
+        //     // alert(username + email);
+        //     localStorage.setItem("quizUser", JSON.stringify({username, email}));
+        //     startQuiz();
+        // });
+
+        // Login Handle
         document.getElementById("loginForm").addEventListener("submit", function(e) {
             e.preventDefault();
             const username = document.getElementById("username").value;
             const email = document.getElementById("email").value;
-            // alert(username + email);
-            localStorage.setItem("quizUser", JSON.stringify({username, email}));
+
+            // Date Validation
+            let today = new Date();
+            if (today < startDate || today > endDate) {
+                alert("The quiz is not available at this time.");
+                return;
+            }
+
+            // Attempt Validation
+            let attempts = parseInt(localStorage.getItem("quizAttempts") || 0);
+            if (attempts >= maxAttempts) {
+                alert("You have already attempted the quiz 10 times. You cannot login again.");
+                return;
+            }
+
+            // Save user and start quiz
+            localStorage.setItem("quizUser", JSON.stringify({ username, email }));
             startQuiz();
         });
 
